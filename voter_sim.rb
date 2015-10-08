@@ -2,7 +2,7 @@ require "./voter.rb"
 require "./politician.rb"
 
 #object enviorment where objects interact to create election
-class World
+class WorldUI
   attr_accessor :politicians, :voters
 
 # tallys the politcian and voter pop for use
@@ -82,9 +82,8 @@ class World
   @voters.each do |voter|
     print "#{voter.name}, #{voter.politics} | "
     end
-  print "\n"
-  print "*" * 50
-  print "\n"
+  puts "\n"
+  print "*" * 50, "\n"
   main_menu
  end
 
@@ -115,7 +114,6 @@ class World
       else
         puts "That's not anyone!"
         update()
-
       end
     main_menu()
  end
@@ -169,9 +167,4 @@ class World
 
 end
 
-World.new.main_menu
-
-class WorldUI
-  @world #interacts with lists of Voters and Politcians
-  #inclds. all prompts that request data to send into @world.
-end
+WorldUI.new.main_menu
