@@ -7,8 +7,6 @@ class WorldUI < World
 
   attr_accessor :politicians, :voters
 
-# tallys the politcian and voter pop for use
-
 # main menu for app operation
   def main_menu
     puts "What would you like to do? 
