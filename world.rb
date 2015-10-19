@@ -2,12 +2,13 @@ require "./voter.rb"
 require "./politician.rb"
 class World
 
+#pockets where created politicians and voters go
   def initialize
     @politicians = []
     @voters = []
   end
 
-#LIST
+#generates and puts out a list of created politicians and voters
  def create_list
   print "*" * 50
   print "\nPoliticians: | "
@@ -23,6 +24,7 @@ class World
   main_menu
  end
 
+#how to locate voters for use in World.methods
   def find_voter(name)
     voter_object = ""
     @voters.each do |voter|
@@ -32,7 +34,8 @@ class World
     end
     voter_object
   end
-
+  
+#how to locate politicians for use in World.methods
   def find_politician(name)
     politician_object = ""
     @politicians.each do |politician|
@@ -48,7 +51,8 @@ class World
     election.max_by{|k,v| v}
   end
 
-  # What vote option executes to run election
+  # What vote method in WorldUI.mainmenu() executes to run election
+  # Runs election
   def run_election
     population = @politicians + @voters
 
